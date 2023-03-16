@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <menuitem id="estate_menu_root" name="Real estate" />
-  <menuitem id="estate_menu_root" name="Real estate">
-    <menuitem id="estate_first_level_menu" name="First Level">
-        <menuitem id="estate_property_menu_action" action="estate_property_action"/>
-    </menuitem>
-  </menuitem>
-  <!-- <record id="estate_model_action" model="ir.actions.act_window">
-    <field name="name">estate action</field>
-    <field name="res_model">estate.property</field>
-    <field name="view_mode">tree,form</field>
-  </record> -->
+  <menuitem id="estate_property" name="Real estate" />
+  <menuitem id="estate_property_menu" parent='estate_property' name="Advertisements"
+    action='estate_model_action' />
+
+  <menuitem id="estate_property_settings_menu" parent='estate_property' name='Settings' />
+  <menuitem id="property_types" parent='estate_property_settings_menu' name='Property Types'
+    action='estate_property_type_action' />
+  <menuitem id="property_tag" parent='estate_property_settings_menu' name='Property Tags'
+    action='estate_property_tag_action' />
+  <menuitem id="property_offer" parent='estate_property_settings_menu' name='Property Offers'
+    action='estate_property_offer_action' />
+
 </odoo>
